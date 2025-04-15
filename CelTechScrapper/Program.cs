@@ -32,15 +32,11 @@ builder.Services.AddScoped<IOverpassService, OverpassService>();
 var app = builder.Build();
 
 // Swagger
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllers();
-
 app.Run();
